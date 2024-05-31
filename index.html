@@ -9,76 +9,73 @@
     <script src="./bootstrap/js/bootstrap.js"></script>
 </head>
 
-<body class="container-fluid m-0 bg-primary-subtle">
-    <header>
-        <!-- Image and text -->
-        <nav class="navbar navbar-light bg-primary">
-            <a class="navbar-brand" href="#">
-                <img src="./img/logo.png" width="30" height="30"
-                    class="d-inline-block align-top" alt="">
-                UR Task Manager
-            </a>
-        </nav>
-        <!-- <nav>
-            <a href="index.html" class="logo">Task Manager</a>
-            <ul>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="register.html">Register</a></li>
-            </ul>
-        </nav> -->
-    </header>
-    <div class="container">
-        <main>
-            <section class="hero">
-                <div class="text-center">
-                    <div class="col-sm-8"><h1>Welcome to Task Manager</h1></div>
-                    <div class="col-sm-4"><p>Organize your tasks, set priorities, and manage your projects efficiently.</p></div>
-                </div>
-                
-                
-                <a href="register.html" class="btn">Get Started</a>
-            </section>
-            <section class="features m-5">
-                <h2>Features</h2>
-                <div class="container text-center">
-                    <div class="row">
-                      <div class="col-sm-8">
-                        <h3>Task Management</h3>
-                        <p>Create, edit, and manage your tasks easily.</p>
-                      </div>
-                      <div class="col-sm-4 row-2">
-                        <h3>Collaboration</h3>
-                        <p>Share tasks and projects with your team.</p>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-8"></div>
-                      <h3>Project Tracking</h3>
-                      <p>Organize your tasks into projects for better tracking.</p>
-                    </div>
-                  </div>
-                <!-- 
-                <div class="feature">
-    
-                    
-                </div>
-                <div class="feature">
-                    
-                </div>
-                <div class="feature">
-                   
-                </div> -->
-            </section>
-        </main>
-    </div>
-    <footer>
-        <div class="card text-center bg-primary">
-            <div class="card-body">
-              <pclass="card-text">&copy; 2024 Task Manager. All rights reserved.</pclass=>
+<body>
+    <nav class="navbar bg-body-tertiary navbar-inverse fixed-top navbar-header">
+        <div class="container-fluid d-flex flex-row">
+            <div>
+                <a class="navbar-brand" href="./index.html">
+                    <img src="./img/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                    Task Manager
+                </a>
             </div>
-          </div>
-        
+            <div>
+                <form class="container-fluid justify-content-start">
+                    <a href="./login.html">
+                        <button class="btn btn-primary me-2" type="button">Login</button>
+                    </a>
+                    <a href="./register.html">
+                        <button class="btn btn-sm btn-outline-primary" type="button">Register</button>
+                    </a>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <main class="my-5 container mb-5">
+        <div class="container text-center mt-3">
+            <h4>Welcome</h4>
+            <h5>Your Personalised</h5>
+            <h1>Task Manager</h1>
+        </div>
+        <section class="d-flex flex-row">
+            <div class="card m-2 mx-auto" style="width: 15rem;">
+                <img src="./img/logo.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text"><h3>ABCD</h3></p>
+                </div>
+            </div>
+            <div class="card m-2 mx-auto" style="width: 15rem;">
+                <img src="./img/logo.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text"><h3>ABCD</h3></p>
+                </div>
+            </div>
+            <div class="card m-2 mx-auto" style="width: 15rem;">
+                <img src="./img/logo.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text"><h3>ABCD</h3></p>
+                </div>
+            </div>
+        </section>
+        <section class="mb-5">
+            <h3 class="mt-5 mb-2">How does it help you finish up your task</h3>
+            <div class="card mb-5" style="width: 18rem;">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Cras justo odio</li>
+                  <li class="list-group-item">Dapibus ac facilisis in</li>
+                  <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+              </div>
+        </section>
+    </main>
+
+    <footer class="fixed-bottom">
+        <div class="card text-center">
+            <div class="card-footer text-body-secondary">
+                <p>&copy; 2024 Task Manager. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
+
 </body>
 
 </html>
