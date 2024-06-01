@@ -32,28 +32,19 @@
         <section class="login-form">
             <h1>Login</h1>
             <div class="row mx-auto">
-                <form>
+                <form class="col-sm-5 ">
                     <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                      <label for="email" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" required>
                     </div>
                     <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" required>
+                      <label for="password" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" name="password" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Login</button>
                   </form>
             </div>
-            <!-- <form action="dashboard.html" method="post">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-                
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-                
-                <button type="submit" class="btn">Login</button>
-            </form> -->
-            <p>Don't have an account? <a href="register.html">Register here</a></p>
+            <p>Don't have an account? <a href="./register.html"><button class="btn btn-primary">Register here</button></a></p>
         </section>
         
     </main>

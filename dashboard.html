@@ -9,43 +9,67 @@
 </head>
 <body>
     <header>
-        <nav>
-            <a href="dashboard.html" class="logo">Task Manager</a>
-            <ul>
-                <li><a href="tasks.html">Tasks</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="notifications.html">Notifications</a></li>
-                <li><a href="settings.html">Settings</a></li>
-                <li><a href="login.html">Logout</a></li>
-            </ul>
+        <nav class="navbar bg-body-tertiary navbar-inverse fixed-top navbar-header">
+            <div class="container-fluid d-flex flex-row">
+                <div>
+                    <a class="navbar-brand" href="./index.html">
+                        <img src="./img/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                        Task Manager
+                    </a>
+                </div>
+                <div>
+                    <form class="container-fluid justify-content-start">
+                        <a href="./dashboard.html">
+                            <button class="btn btn-primary me-2" type="button">Home</button>
+                        </a>
+                        <a href="./tasks.html">
+                            <button class="btn btn-sm btn-outline-primary" type="button">Profile</button>
+                        </a>
+                        <a href="./register.html">
+                            <button class="btn btn-sm btn-outline-primary" type="button">Tasks</button>
+                        </a>
+                        <a href="./index.html">
+                            <button class="btn btn-sm btn-outline-primary" type="button">Logout</button>
+                        </a>
+                    </form>
+                </div>
+            </div>
         </nav>
     </header>
-    <main>
-        <h1>Dashboard</h1>
-        <section class="overview">
-            <h2>Overview</h2>
-            <p>Welcome back, [User]! Here’s a quick overview of your tasks and projects.</p>
-        </section>
-        <section class="tasks">
-            <h2>Recent Tasks</h2>
-            <ul>
-                <li>Task 1</li>
-                <li>Task 2</li>
-                <li>Task 3</li>
-            </ul>
-        </section>
-        <section class="projects">
-            <h2>Recent Projects</h2>
-            <ul>
-                <li>Project 1</li>
-                <li>Project 2</li>
-                <li>Project 3</li>
-            </ul>
-        </section>
+    <main class="container mt-5 pt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Tasks Overview</h2>
+                <ul class="list-group">
+                    <li class="list-group-item">Total Tasks: 20</li>
+                    <li class="list-group-item">Completed Tasks: 15</li>
+                    <li class="list-group-item">Pending Tasks: 5</li>
+                </ul>
+                <a href="tasks.html" class="btn btn-primary mt-3">View All Tasks</a>
+            </div>
+            <div class="col-md-6">
+                <h2>Projects Overview</h2>
+                <ul class="list-group">
+                    <li class="list-group-item">Total Projects: 5</li>
+                    <li class="list-group-item">Active Projects: 3</li>
+                    <li class="list-group-item">Completed Projects: 2</li>
+                </ul>
+                <a href="projects.html" class="btn btn-primary mt-3">View All Projects</a>
+            </div>
+            <!-- <div class="col-md-4">
+                <h2>Team Collaboration</h2>
+                <p>Collaborate with your team to manage tasks and projects effectively.</p>
+                <a href="team.html" class="btn btn-primary mt-3">View Team</a>
+            </div> -->
+        </div>
     </main>
-    <footer>
-        <p>&copy; 2024 Task Manager. All rights reserved.</p>
+    <footer class="fixed-bottom">
+        <div class="card text-center">
+            <div class="card-footer text-body-secondary">
+                <p>&copy; 2024 Task Manager. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
+
 </body>
 </html>
