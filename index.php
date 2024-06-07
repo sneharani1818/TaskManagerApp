@@ -11,17 +11,19 @@
     $con= mysqli_connect($server, $username, $password,$database);
     if (!$con) {
         die("Connection failed: " . mysqli_connect_error());
-        echo "Not connected to DB";
+        // echo "Not connected to DB";
     }
 
     $email=$_POST['email'];
     $password=$_POST['password'];
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
     $full_name=$_POST['full_name'];
-    if (isset($_POST['phno'])) {
-        $phno = $_POST['phno'];
-    } else {
-        $phno = ''; // or handle it as needed
-    }
+    // if (isset($_POST['phno'])) {
+    //     $phno = $_POST['phno'];
+    // } else {
+    //     $phno = ''; // or handle it as needed
+    // }
+    $phno = isset($_POST['phno']) ? $_POST['phno'] : '';
     $dob=$_POST['dob'];
     $ques_type=$_POST['ques_type'];
     if($ques_type=="What was the name of your first pet?")
@@ -33,26 +35,67 @@
 
     $ans_of_ques=$_POST['ans_of_ques'];
 
-    echo $email."<br>";
-    echo $password."<br>";
-    echo $full_name."<br>";
-    echo $phno."<br>";
-    echo $dob."<br>";
-    echo $ques_type."<br>";
-    echo $ans_of_ques;
+    // $sql = "INSERT INTO `users` (`email`, `password`, `full_name`, `phno`, `dob`, `ques_type`, `ans_of_ques`, `curr_time`) VALUES ('$email', '$hashed_password', '$full_name', '$phno', '$dob', '$ques_type', '$ans_of_ques', current_timestamp());";
+    $sql=$sql = "INSERT INTO `users` (`email`, `password`, `full_name`, `phno`, `dob`, `ques_type`, `ans_of_ques`, `curr_time`) VALUES (?, ?, ?, ?, ?, ?, ?, current_timestamp())";
 
-    // $sql="INSERT INTO `users` (`email`, `password`, `full_name`, `phno`, `dob`, `ques_type`, `ans_of_ques`, `curr_time`) VALUES (`$email`, `$password`, `$full_name`, `$phno`, `$dob`, `$ques_type`, `$ans_of_ques`,current_timestamp());";
-    $sql = "INSERT INTO `users` (`email`, `password`, `full_name`, `phno`, `dob`, `ques_type`, `ans_of_ques`, `curr_time`) VALUES ('$email', '$password', '$full_name', '$phno', '$dob', '$ques_type', '$ans_of_ques', current_timestamp());";
+    $stmt = $con->prepare($sql);
+
+    if ($stmt) {
+        // Bind parameters
+        $stmt->bind_param("sssssss", $email, $hashed_password, $full_name, $phno, $dob, $ques_type, $ans_of_ques);
     
-    //executing query
-    if($con->query($sql)){
-        echo "Record inserted";
+        // Execute the statement
+        if ($stmt->execute()) {
+            // echo "Record inserted";
+            echo '<script>
+                alert("You have registered successfully and can log in using your email");
+                window.location.href = "./login.html";
+            </script>';
+            // header('Location: ./index.html');
+        } else {
+            echo "Not inserted: Error =" . $stmt->error;
+        }
     }
-    else{
-        echo "Not inserted: Error =".$con->error;
-    }
+    
+        // Close the statement
+        $stmt->close();
+
+
+    // //executing query
+    // if($con->query($sql)){
+    //     // echo "Record inserted";
+    //     echo '<script>
+    //         alert("You have registered successfully and can log in using your email");
+    //         window.location.href = "./login.html";
+    //     </script>';
+    //     // header('Location: ./index.html');
+    // }
+    // else{
+    //     echo "Not inserted: Error =".$con->error;
+    // }
 
     mysqli_close($con);
 
 ?>
 
+<!-- if ($stmt) {
+    // Bind parameters
+    $stmt->bind_param("sssssss", $email, $hashed_password, $full_name, $phno, $dob, $ques_type, $ans_of_ques);
+
+    // Execute the statement
+    if ($stmt->execute()) {
+        // echo "Record inserted";
+        echo '<script>
+            alert("You have registered successfully and can log in using your email");
+            window.location.href = "./login.html";
+        </script>';
+        // header('Location: ./index.html');
+    } else {
+        echo "Not inserted: Error =" . $stmt->error;
+    }
+
+    // Close the statement
+    $stmt->close();
+} else {
+    echo "Error preparing statement: " . $con->error;
+} -->

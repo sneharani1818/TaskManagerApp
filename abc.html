@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management App</title>
+    <script src="./js/index.js"></script>
+</head>
+<body>
+    <h1>Task Management App</h1>
+
+    <form id="taskForm" onsubmit="addTask(event)">
+        <input type="hidden" id="task_id" name="task_id">
+        <label for="task_name">Task Name:</label>
+        <input type="text" id="task_name" name="task_name" required><br>
+
+        <label for="task_description">Task Description:</label>
+        <textarea id="task_description" name="task_description" required></textarea><br>
+
+        <label for="task_status">Task Status:</label>
+        <select id="task_status" name="task_status">
+            <option value="Pending">Pending</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+        </select><br>
+
+        <button type="submit">Add Task</button>
+        <button type="button" onclick="updateTask(event)">Update Task</button>
+    </form>
+
+    <div id="tasks"></div>
+</body>
+</html>
